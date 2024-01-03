@@ -13,12 +13,19 @@ input RegisterRequest {
     password: String!
 }
 
+input AuthenticationRequest {
+    email: String!
+    password: String!
+}
+
 type AuthenticationResponse {
     token: String!
 }
 
 type Mutation {
     register(registerRequest: RegisterRequest) : AuthenticationResponse
+
+    authenticate(authenticationRequest: AuthenticationRequest): AuthenticationResponse
 }
 
 type Query {
