@@ -1,0 +1,26 @@
+type User {
+    id: ID!
+    firstName: String!
+    lastName: String!
+    email: String!
+    password: String!
+}
+
+input RegisterRequest {
+    firstName: String!
+    lastName: String!
+    email: String!
+    password: String!
+}
+
+type AuthenticationResponse {
+    token: String!
+}
+
+type Mutation {
+    register(registerRequest: RegisterRequest) : AuthenticationResponse
+}
+
+type Query {
+    userById(id: ID): User
+}
