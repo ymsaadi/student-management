@@ -30,4 +30,5 @@ type Mutation {
 
 type Query {
     userById(id: ID): User
+    users: [User]
 }
